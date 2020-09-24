@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/js/orders.js" th:href="@{/js/orders.js}"></script>
+</head>
+<body onload="onload();">
+	<div th:replace="fragments/header :: header"></div>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<h1>
+					<strong>Monitor de Ordenes</strong>
+				</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-2">
+				<label for="sta">Estado</label><br>
+				<select name="status" id="status" style="padding: 8px; width: 100%">
+					<option>Seleccione Estado</option>
+				</select>
+			</div>
+			<div class="col-md-3">
+				<label for="cust">Cliente</label><br>
+				<select name="customers" id="customers" style="padding: 8px; width: 100%">
+					<option>Seleccione Cliente</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<label for="fde">Fecha Orden Desde</label>
+				<input class="form-control" id="fde" type="date">
+			</div>
+			<div class="col-md-2">
+				<label for="fha">Fecha Orden Hasta</label>
+				<input class="form-control" id="fha" type="date">
+			</div>
+			<div class="col-md-3" style="height: 50px">
+				<button class="btn btn-primary btn-block" style="margin-top: 25px" type="button"
+					onclick="javascript:btnBuscar()">Buscar</button>
+			</div>
+		</div>
+		<br>
+
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th>Número de orden</th>
+							<th>Fecha de orden</th>
+							<th>Fecha requerida</th>
+							<th>Estado</th>
+							<th>Acción</th>
+						</tr>
+					</thead>
+					<tbody id="orders">
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

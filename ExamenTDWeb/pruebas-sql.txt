@@ -1,0 +1,15 @@
+Select ORDERNUMBER, ORDERDATE, REQUIREDDATE, SHIPPEDDATE, STATUS, CUSTOMERNUMBER 
+FROM ORDERS
+WHERE status='Shipped' 
+and customernumber='128' and orderdate between '01/01/2000' and (select to_char(current_date, 'dd/mm/yyyy') from dual);
+
+select * from customers where CUSTOMERNUMBER is not null;
+
+select ORDERNUMBER, ORDERDATE, REQUIREDDATE, SHIPPEDDATE, STATUS, CUSTOMERNUMBER from orders ORDER BY customernumber;
+
+Select ORDERNUMBER, ORDERDATE, REQUIREDDATE, SHIPPEDDATE, STATUS, CUSTOMERNUMBER 
+FROM ORDERS
+WHERE status like '%'
+and customernumber like '%' and orderdate between '01/01/2000' and '01/01/2020';
+
+select to_char(current_date, 'dd/mm/yyyy') from dual;
